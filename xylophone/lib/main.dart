@@ -27,8 +27,8 @@ class _myAppState extends State<myApp> {
 
     Expanded sound(a, b) {
       return Expanded(
-        child: FlatButton(
-          color: b,
+        child: TextButton(
+          style: TextButton.styleFrom(backgroundColor: b),
           onPressed: () {
             play(a);
           },

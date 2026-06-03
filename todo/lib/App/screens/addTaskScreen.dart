@@ -24,7 +24,7 @@ Widget builder(BuildContext context) {
             ),
           ),
         ),
-        FlatButton(
+        TextButton(
           onPressed: () {},
           child: container,
         )

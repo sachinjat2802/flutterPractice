@@ -32,6 +32,6 @@ class WeatherModel {
   }
 }
 
-  // var city = jsonDecode(response!.body)['name'];
-  //     var temp = jsonDecode(response!.body)['main']['temp'];
-  //     var condtion = jsonDecode(response!.body)['weather'][0]['description'];
+// var city = jsonDecode(response!.body)['name'];
+//     var temp = jsonDecode(response!.body)['main']['temp'];
+//     var condtion = jsonDecode(response!.body)['weather'][0]['description'];

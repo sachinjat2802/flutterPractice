@@ -7,7 +7,9 @@ import 'calculation.dart';
 
 Color maleCardColor = deActivecardColor;
 Color femaleCardColor = deActivecardColor;
+
 enum Cards { maleCardColor, femaleCardColor, color }
+
 int num = 180;
 int weight = 60;
 int age = 18;

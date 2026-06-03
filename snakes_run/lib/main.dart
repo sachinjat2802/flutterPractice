@@ -1,4 +1,4 @@
-import 'package:control_pad/views/joystick_view.dart';
+import 'package:flutter_joystick/flutter_joystick.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -31,15 +31,10 @@ class MyApp extends StatelessWidget {
                   ),
                 ),
               ),
-              JoystickView(
-                size: 100,
-                backgroundColor: Colors.grey,
-                opacity: 0.1,
-                showArrows: false,
-                innerCircleColor: Colors.green,
-                onDirectionChanged: (x, y) {
-                  print('X:$x');
-                  print('Y:$y');
+              Joystick(
+                listener: (details) {
+                  print('X: ${details.x}');
+                  print('Y: ${details.y}');
                 },
               ),
             ],

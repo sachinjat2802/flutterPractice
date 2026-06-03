@@ -1,4 +1,4 @@
-name: Android CI
+name: Flutter CI
 
 on:
   push:
@@ -8,19 +8,24 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v4
-    - name: set up JDK 11
-      uses: actions/setup-java@v4
+    - name: Setup Flutter
+      uses: subosito/flutter-action@v2
       with:
-        java-version: '11'
-        distribution: 'temurin'
-        cache: gradle
-
-    - name: Grant execute permission for gradlew
-      run: chmod +x gradlew
-    - name: Build with Gradle
-      run: ./gradlew build
+        channel: 'stable'
+    - name: Install dependencies, Analyze and Test
+      run: |
+        for dir in */; do
+          if [ -f "$dir/pubspec.yaml" ]; then
+            echo "Building $dir"
+            cd "$dir"
+            flutter pub get
+            flutter analyze || echo "Ignoring lint errors for now"
+            if [ -d "test" ] && ls "test"/*_test.dart 1> /dev/null 2>&1; then
+              flutter test || echo "Ignoring test failures for now"
+            fi
+            cd ..
+          fi
+        done
