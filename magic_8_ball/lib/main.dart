@@ -32,7 +32,7 @@ class _myApppState extends State<myAppp> {
 
   @override
   Widget build(BuildContext context) {
-    return FlatButton(
+    return TextButton(
       onPressed: () {
         changeBall();
       },

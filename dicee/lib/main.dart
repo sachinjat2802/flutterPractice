@@ -40,7 +40,7 @@ class _nameState extends State<myapp> {
         child: Row(
           children: [
             Expanded(
-              child: FlatButton(
+              child: TextButton(
                 onPressed: () {
                   changeFace();
 
@@ -50,7 +50,7 @@ class _nameState extends State<myapp> {
               ),
             ),
             Expanded(
-              child: FlatButton(
+              child: TextButton(
                 onPressed: () {
                   changeFace();
                   print('right button pressed   $nums');

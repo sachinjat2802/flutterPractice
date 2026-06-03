@@ -46,7 +46,8 @@ class _StoryPageState extends State<StoryPage> {
               ),
               Expanded(
                 flex: 2,
-                child: FlatButton(
+                child: TextButton(
+                  style: TextButton.styleFrom(backgroundColor: Colors.red),
                   onPressed: () {
                     setState(() {
                       // storyBrain.getChoice1();
@@ -54,7 +55,6 @@ class _StoryPageState extends State<StoryPage> {
                     });
                     storyBrain.nextStory();
                   },
-                  color: Colors.red,
                   child: Text(
                     storyBrain.getChoice1(),
                     style: TextStyle(
@@ -68,13 +68,13 @@ class _StoryPageState extends State<StoryPage> {
               ),
               Expanded(
                 flex: 2,
-                child: FlatButton(
+                child: TextButton(
+                  style: TextButton.styleFrom(backgroundColor: Colors.blue),
                   onPressed: () {
                     setState(() {
                       storyBrain.nextStory1();
                     });
                   },
-                  color: Colors.blue,
                   child: Text(
                     storyBrain.getChoice2(),
                     style: TextStyle(

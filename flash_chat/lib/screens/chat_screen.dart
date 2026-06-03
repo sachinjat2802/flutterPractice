@@ -70,7 +70,7 @@ class _ChatScreenState extends State<ChatScreen> {
                     decoration: kMessageTextFieldDecoration,
                   ),
                 ),
-                FlatButton(
+                TextButton(
                   onPressed: () {
                     _firestore.collection('massages').add(
                         {'massage': massage, 'sender': loggedinUser.email});
